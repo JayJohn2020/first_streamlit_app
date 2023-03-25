@@ -1,7 +1,6 @@
 
 import streamlit
 import pandas
-import snowflake.connector
 
 streamlit.title("My Mom's New Healthy Diner")
 
@@ -45,6 +44,9 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # Display the table on the page.
 streamlit.dataframe(fruityvice_normalized)
 
+
+
+import snowflake.connector
 
 # Let's Query Our Trial Account Metadata 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
